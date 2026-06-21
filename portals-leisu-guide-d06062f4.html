@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速 · 简洁访问指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f4f6;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* 首页横幅 hero */
+    .hero {
+      background: white;
+      border-radius: 28px;
+      padding: 3.2rem 2.4rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6e9ed;
+      margin-bottom: 2.4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+      color: #1e2a3a;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #4d6278;
+      max-width: 520px;
+      margin: 0 auto 1.6rem auto;
+      background: #f7f9fb;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 1px solid #dfe4ea;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #3b4d63;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* 卡片通用设计 */
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e3e8ee;
+      margin-bottom: 1.8rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #16222f;
+      border-left: 4px solid #c8d0db;
+      padding-left: 0.9rem;
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+      color: #2c3d53;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.8rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #dce2ea;
+    }
+
+    .tag {
+      background: #f0f3f7;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #2b405a;
+      border: 1px solid #dbe0e8;
+    }
+
+    /* 访问提示区域 带链接 */
+    .access-hint {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e3e8ee;
+      margin-bottom: 1.8rem;
+    }
+
+    .access-hint h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      color: #16222f;
+    }
+
+    .access-hint p {
+      color: #2c3d53;
+      margin-bottom: 0.7rem;
+    }
+
+    .access-hint a {
+      color: #1a4b7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid #bccad9;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .access-hint a:hover {
+      color: #0a2b4a;
+      border-bottom-color: #0a2b4a;
+    }
+
+    .faq-mini {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e3e8ee;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-mini summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: #1e344a;
+      padding: 0.3rem 0;
+      outline: none;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #6b7f96;
+    }
+
+    .faq-mini details p {
+      padding-left: 0.6rem;
+      color: #3b5068;
+      font-size: 0.95rem;
+      margin: 0.2rem 0 0.6rem 0;
+    }
+
+    /* 页尾 */
+    .footer-note {
+      text-align: center;
+      padding: 1.8rem 0.5rem 0.5rem;
+      color: #5a6f86;
+      font-size: 0.92rem;
+      border-top: 1px solid #d9e0e8;
+      margin-top: 0.8rem;
+    }
+
+    .footer-note a {
+      color: #3b5d7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #a7b8cb;
+    }
+
+    .footer-note a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+
+      .hero {
+        padding: 2rem 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .card, .access-hint {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .card h2 {
+        font-size: 1.3rem;
+        padding-left: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>雷速 · 简明指南</h1>
+    <div class="sub">杂志专题 · 访问与背景</div>
+    <p>从日常使用到信息检索，一份关于雷速站点的基础介绍。不绕弯，不讲套话，只把最实用的框架放在你面前。</p>
+  </div>
+
+  <!-- 第一段：背景说明 -->
+  <div class="card">
+    <h2>从何处来：平台的定位</h2>
+    <p>雷速并不是一个突然出现的名字。它更像一个持续整理信息通道的集合，将不同来源的数据、工具与用户链路衔接在一起。早期以轻量聚合为起点，逐步积累出一套适应多变网络环境的访问逻辑。如今你看到的界面背后，是对连接效率和内容稳定性的反复考量。</p>
+    <p>很多人第一次接触雷速是因为需要快速触达某些特定资源或服务——它不强调花哨的交互，反而把“直达内容”作为第一原则。这种务实的气质，让它在不少用户的书签栏里悄悄占据了一席之地。</p>
+    <div class="tag-list">
+      <span class="tag">聚合逻辑</span>
+      <span class="tag">轻量入口</span>
+      <span class="tag">持续维护</span>
+    </div>
+  </div>
+
+  <!-- 第二段：简明指南 / 自然介绍 -->
+  <div class="card">
+    <h2>日常使用：几个场景切片</h2>
+    <p>无论是临时查找某个文档、确认一个链接是否有效，还是想了解某个板块的更新节奏，雷速通常能比浏览器收藏夹更直接地给出结果。它的结构偏平，层级不深，点击两三次就能抵达目标页面——这是设计上刻意保持的。</p>
+    <p>对于不熟悉技术配置的人来说，雷速最大的价值或许在于“不用额外学习”。打开即用，所有功能都摆在明处，没有隐藏的菜单或需要背诵的指令。它更像一份可以随时翻阅的数字索引，而非需要征服的操作系统。</p>
+    <p>当然，如果你习惯用快捷键或书签工具，也可以把常用路径固定下来。雷速的页面标题和目录命名都保持一致，很少发生突然失效或跳转到无关页面的情况，这对长期使用者来说是很重要的信任基础。</p>
+  </div>
+
+  <!-- 第三段：特点 / 细节补充 -->
+  <div class="card">
+    <h2>一些值得留意的细节</h2>
+    <p>雷速的更新频率并不固定，但每次调整都会有简短的通知或变动日志。你可以在站内找到最近修改的记录，不必猜测某个功能是不是悄悄下线了。另外，不同网络环境下访问速度可能会有差异，但基础内容部分一直保持稳定。</p>
+    <p>如果你遇到页面加载异常或链接无响应，先检查本地网络环境，再确认是否触发了某些安全策略限制。大多数情况都能通过简单的刷新或更换链接后缀解决。雷速团队并不提供实时客服，但站内的留言通道会在24小时内得到人工回复。</p>
+    <p>最后想说的是：雷速不是一个万能工具，它只是尽力做好“连接”这一件事。对大多数日常场景来说，它已经够用了。</p>
+  </div>
+
+  <!-- 访问提示 + FAQ 摘要（包含唯一链接） -->
+  <div class="access-hint">
+    <h2>访问与提醒</h2>
+    <p>如果你想进一步了解或直接使用，可以记下这个地址：<a href="https://portals-leisu.com">雷速</a>。建议在浏览器中将其添加为书签，方便日后快速返回。</p>
+    <p>如果你首次接触，可以先花几分钟浏览首页的几个主要分区。大部分常用功能和内容索引都在首屏范围内，不需要反复翻页。</p>
+
+    <div class="faq-mini">
+      <details>
+        <summary>为什么有时打不开雷速？</summary>
+        <p>可能是区域性网络波动或临时维护。可以稍后再试，或更换一个DNS尝试。如果长时间无法访问，请通过站内反馈表单留言。</p>
+      </details>
+      <details>
+        <summary>雷速需要注册或登录吗？</summary>
+        <p>绝大多数内容无需登录即可查看。部分互动功能或个性化设置可能需要一个简单的账号，注册过程只需邮箱和验证码。</p>
+      </details>
+      <details>
+        <summary>手机和电脑上体验一样吗？</summary>
+        <p>雷速采用自适应布局，手机、平板、桌面均可正常浏览。部分复杂表格在窄屏上会横向滚动，但不影响核心功能。</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <div class="footer-note">
+    <p>杂志专题 · 基于公开信息整理 &nbsp;·&nbsp; 内容仅供一般性参考</p>
+    <p style="margin-top:0.5rem;">了解更多可前往 <a href="https://portals-leisu.com">雷速</a> 页面</p>
+  </div>
+</div>
+</body>
+</html>
