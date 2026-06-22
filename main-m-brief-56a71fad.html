@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 – 体育竞彩信息站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f1a2e 0%, #1b2b41 100%);
+            color: #e9edf2;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        /* 导航条 */
+        .nav-bar {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            font-size: 0.95rem;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-bar a:hover {
+            border-bottom-color: #b22234;
+            color: #b22234;
+        }
+
+        /* 主体容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* 站点介绍卡片 */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.2rem 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 3rem;
+            border: 1px solid #eef2f6;
+        }
+        .intro-card h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #1e2a3a;
+        }
+        .intro-card p {
+            margin-bottom: 1.1rem;
+        }
+
+        /* 三个场景模块 (卡片网格) */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2.8rem 0 3.2rem;
+        }
+        .scene-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+            border: 1px solid #e6edf4;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #1e2a3a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .scene-card h3 span {
+            font-size: 1.5rem;
+        }
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #3d5169;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 常见说明区域 (FAQ 摘要) */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            border: 1px solid #eef2f6;
+            margin: 2.5rem 0 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e2a3a;
+        }
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #1e2a3a;
+            margin-bottom: 0.3rem;
+            font-size: 1.02rem;
+        }
+        .faq-answer {
+            color: #4a5e77;
+            font-size: 0.95rem;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b22234;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #8b1a1a;
+            text-decoration: underline;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem 3rem;
+            color: #657b96;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            background: #f7f9fc;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 1.9rem; }
+            .intro-card { padding: 1.8rem 1.2rem; }
+            .faq-section { padding: 1.5rem 1.2rem; }
+            .nav-bar { gap: 1rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 + 标题 -->
+<div class="hero">
+    <h1>竞彩资讯 · 可信参考</h1>
+    <p>一站了解竞彩赛事、数据与实用信息，专注体育竞彩领域的基础服务。</p>
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav-bar">
+    <a href="#intro">站点介绍</a>
+    <a href="#scenes">常见场景</a>
+    <a href="#faq">常见说明</a>
+</nav>
+
+<div class="container">
+
+    <!-- 核心介绍区块 -->
+    <div class="intro-card" id="intro">
+        <h2>关于竞彩网</h2>
+        <p>
+            <strong><a href="https://main-m-sporttery.com">竞彩网</a></strong> 是一个面向体育竞彩爱好者的信息服务平台，提供赛事数据、玩法说明以及相关资讯整合。站点内容力求客观、清晰，帮助用户在了解规则与赛事背景的基础上做出判断。
+        </p>
+        <p>
+            竞彩网本身不直接组织投注或提供资金服务，而是聚焦于信息参考与规则普及。我们持续整理国内外主流赛事的竞彩数据，并保持内容的中立与准确性。无论您是初次接触竞彩，还是希望系统了解某一联赛的盘口与水位的动态变化，这里都能为您提供有价值的参考。
+        </p>
+        <p>
+            站点内容由专业团队结合公开数据与行业知识编辑，强调可信度和实用性，不夸大收益或暗示必胜策略。我们相信，理性的认知才是参与竞彩的长期基础。
+        </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2 style="font-size:1.5rem; font-weight:600; color:#1e2a3a; margin-bottom:0.5rem;" id="scenes">常见使用场景</h2>
+    <p style="color:#4a5e77; margin-bottom:1.2rem;">不同用户都能在 <a href="https://main-m-sporttery.com">竞彩网</a> 找到贴近需求的板块。</p>
+
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <h3><span>⚽</span> 赛前快速了解</h3>
+            <p>比赛日打开竞彩网，浏览对阵双方的近期战绩、伤停信息以及历史交锋记录。数据展示简洁，帮助你在几分钟内掌握基本赛况。</p>
+            <p>页面会同步提供主流玩法的固定奖金参考，让赛前分析更加充分。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span>🏀</span> 玩法规则查阅</h3>
+            <p>对于让球胜平负、总进球数、半全场等竞彩玩法，新用户常常需要一份清晰的说明。竞彩网专门设有规则专区，用通俗语言解释每个选项的含义与计算方式。</p>
+            <p>同时附带示例，让抽象概念变得直观。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span>📊</span> 数据趋势回顾</h3>
+            <p>通过历史数据模块，可以回顾特定联赛或球队的盘路走势、大小球分布等统计。这些数据不构成预测，但能为用户的独立判断提供参考维度。</p>
+            <p>所有数据标注来源与更新周期，保持透明可查。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section" id="faq">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <div class="faq-question">竞彩网是否提供投注服务？</div>
+            <div class="faq-answer">不提供。竞彩网只做信息聚合与规则介绍，不接入任何支付或投注系统。所有赛事数据仅用于参考。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">数据更新频率如何？</div>
+            <div class="faq-answer">主流联赛的赛前数据通常每日更新，赛后会及时修正最终结果。具体更新节奏会在页面备注中说明。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">信息是否可靠？</div>
+            <div class="faq-answer">数据来源于公开可查的赛事统计与官方机构，编辑团队会进行交叉校验。但仍建议您以实际官方信息为准，竞彩网内容仅供参考。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">需要注册或付费吗？</div>
+            <div class="faq-answer">完全免费开放，无需注册。您可以直接浏览 <a href="https://main-m-sporttery.com">竞彩网</a> 的所有公开内容。</div>
+        </div>
+    </div>
+
+    <!-- 一段温和的收尾 -->
+    <p style="color:#3d5169; text-align:center; margin-top: 2rem; font-size:0.95rem;">
+        无论您是初次了解竞彩，还是希望持续跟进赛事动态，都欢迎将 <a href="https://main-m-sporttery.com">竞彩网</a> 作为信息参考的一站。保持理性，享受体育本身的乐趣。
+    </p>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+    <p>© 竞彩网介绍页 · 仅供信息参考 · 理性参与体育竞彩</p>
+</div>
+
+</body>
+</html>
